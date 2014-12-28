@@ -38,11 +38,7 @@ namespace FunctionalProgramming
                 Author = "Dostoyevski",
                 Name = "Idiot"
             }};
-
-
         }
-
-
 
 
         static void InitializeList()
@@ -66,14 +62,34 @@ namespace FunctionalProgramming
             });
 
         }
+
+       
         static void Main()
         {
-            InitializeCollections();
+            //InitializeCollections();
 
-            GetGenericListCount();
-            GetGenericArrayCount();
-            GetGenericListCountWithPredicate();
-            AddingRemovingDelegates();
+            //GetGenericListCount();
+            //GetGenericArrayCount();
+            //GetGenericListCountWithPredicate();
+            //AddingRemovingDelegates();
+
+            int[] numbers = new[] { 5, 23, 33, 78, 99, 4 };
+
+            var numbersList = numbers.ToList();
+
+           // var reMapped = numbers.MapXX<int>(delegate(int x) { return x * 2; });
+
+            string[] words = new[] { "happy", "sad", "inbetween", "exstatic" };
+            var wordsList = words.ToList();
+            var reMapped = words.MapXX<string>(delegate(string x) { return x + " " + "Hello sunshine"; });
+
+            //var reMapped = numbers.MapXX<int>(this, delegate(int x) { return x * 2; });
+
+            //var reMapped = numbers.Select(p => p * 2);
+
+
+            reMapped.ToList().ForEach(p => Console.WriteLine(p));
+
 
             Console.Read();
         }
@@ -140,8 +156,9 @@ namespace FunctionalProgramming
 
         private static void GetGenericListCountWithPredicate()
         {
-            Predicate<Book> myPredicate = delegate(Book b) { return b.Name.Contains("T"); };
-            Console.WriteLine(arrayHelper.returnListCountWithPredicate(books, myPredicate));
+            //Expression<Predicate<Book>> myPredicate = ( b) = b.Name.Contains("T");
+            //delegate(Book b) { return b.Name.Contains("T"); };
+            // Console.WriteLine(arrayHelper.returnListCountWithPredicate(books, myPredicate));
         }
 
     }

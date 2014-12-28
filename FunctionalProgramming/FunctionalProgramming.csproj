@@ -52,6 +52,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="BooksContext.cs" />
     <Compile Include="BooksContextInitializer.cs" />
+    <Compile Include="ExtensionsMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

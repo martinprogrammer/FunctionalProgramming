@@ -19,9 +19,9 @@ namespace FunctionalProgramming
             return theList.Where(predicate).Count();
         }
 
-        public int returnListCountWithPredicate(List<T>theList, Predicate<T> predicate)
+        public int returnListCountWithPredicate(List<T>theList, Expression<Predicate<T>> predicate)
         {
-            return theList.Count();
+            return 0;
         }
     }
 }
