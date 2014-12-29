@@ -73,22 +73,25 @@ namespace FunctionalProgramming
             //GetGenericListCountWithPredicate();
             //AddingRemovingDelegates();
 
-            int[] numbers = new[] { 5, 23, 33, 78, 99, 4 };
+           // int[] numbers = new[] { 5, 23, 33, 78, 99, 4 };
 
-            var numbersList = numbers.ToList();
+           // var numbersList = numbers.ToList();
 
-           // var reMapped = numbers.MapXX<int>(delegate(int x) { return x * 2; });
+           //// var reMapped = numbers.MapXX<int>(delegate(int x) { return x * 2; });
 
-            string[] words = new[] { "happy", "sad", "inbetween", "exstatic" };
-            var wordsList = words.ToList();
-            var reMapped = words.MapXX<string>(delegate(string x) { return x + " " + "Hello sunshine"; });
+           // string[] words = new[] { "happy", "sad", "inbetween", "exstatic" };
+           // var wordsList = words.ToList();
+           // var reMapped = words.MapXX<string>(delegate(string x) { return x + " " + "Hello sunshine"; });
 
-            //var reMapped = numbers.MapXX<int>(this, delegate(int x) { return x * 2; });
+           // //var reMapped = numbers.MapXX<int>(this, delegate(int x) { return x * 2; });
 
-            //var reMapped = numbers.Select(p => p * 2);
+           // //var reMapped = numbers.Select(p => p * 2);
 
 
-            reMapped.ToList().ForEach(p => Console.WriteLine(p));
+           // reMapped.ToList().ForEach(p => Console.WriteLine(p));
+           // CompositeStuff.ExecuteCompositeFunction();
+
+            AsyncStuffWithCallback.ExecuteSlowThing();
 
 
             Console.Read();

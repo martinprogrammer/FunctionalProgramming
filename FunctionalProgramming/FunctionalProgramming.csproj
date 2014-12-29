@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayHelper.cs" />
+    <Compile Include="AsyncStuff.cs" />
+    <Compile Include="AsyncStuffWithCallback.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="BooksContext.cs" />
     <Compile Include="BooksContextInitializer.cs" />
+    <Compile Include="CompositeStuff.cs" />
     <Compile Include="ExtensionsMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
