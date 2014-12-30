@@ -91,7 +91,11 @@ namespace FunctionalProgramming
            // reMapped.ToList().ForEach(p => Console.WriteLine(p));
            // CompositeStuff.ExecuteCompositeFunction();
 
-            AsyncStuffWithCallback.ExecuteSlowThing();
+           //AsyncStuffWithCallback.ExecuteSlowThing();
+
+            //TuplesStuff.ExecuteReturnNumberAsWord();
+
+            ClosuresStuff.ExecuteClosures();
 
 
             Console.Read();

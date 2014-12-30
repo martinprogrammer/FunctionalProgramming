@@ -20,12 +20,12 @@ namespace FunctionalProgramming
         {
             Func<int, string> slowThing = SlowThing;
 
-            IAsyncResult result = slowThing.BeginInvoke(2231, async =>
+            IAsyncResult result = slowThing.BeginInvoke(343, p =>
             {
-                var asy = (AsyncResult)async;
-                var fn = (Func<int, string>)asy.AsyncDelegate;
-                string res = fn.EndInvoke(asy);
-                Console.WriteLine("{0}", res);
+                var async = (AsyncResult)p;
+                var fn = (Func<int, string>)async.AsyncDelegate;
+                var res = fn.EndInvoke(p);
+                Console.WriteLine(res);
             }, null);
 
         }
