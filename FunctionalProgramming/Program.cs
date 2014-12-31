@@ -95,7 +95,9 @@ namespace FunctionalProgramming
 
             //TuplesStuff.ExecuteReturnNumberAsWord();
 
-            ClosuresStuff.ExecuteClosures();
+           // ClosuresStuff.ExecuteClosures();
+
+            CachingWithClosures.ExecuteCache();
 
 
             Console.Read();

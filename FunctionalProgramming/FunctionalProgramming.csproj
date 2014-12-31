@@ -54,6 +54,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="BooksContext.cs" />
     <Compile Include="BooksContextInitializer.cs" />
+    <Compile Include="CachingWithClosures.cs" />
     <Compile Include="ClosuresStuff.cs" />
     <Compile Include="CompositeStuff.cs" />
     <Compile Include="ExtensionsMethods.cs" />
