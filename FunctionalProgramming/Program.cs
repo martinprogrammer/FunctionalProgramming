@@ -97,7 +97,10 @@ namespace FunctionalProgramming
 
            // ClosuresStuff.ExecuteClosures();
 
-            CachingWithClosures.ExecuteCache();
+            //CachingWithClosures.ExecuteCache();
+            //RecursionsStuff.ExecuteFactorialRecursion();
+
+            PartialFunctions.ExecutePartialFunction();
 
 
             Console.Read();
