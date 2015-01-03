@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace FunctionalProgramming
 {
@@ -15,8 +16,41 @@ namespace FunctionalProgramming
 
         public static void ExecuteCurrying1()
         {
-            Func<double, double> myFunc =x => x;
-            Console.WriteLine(myFunc(5).Adding(5).Adding(7));
+            //Func<double, double> myFunc =x => x;
+            //Console.WriteLine(myFunc(5).Adding(5).Adding(7));
+
+            var theSampleList = Enumerable.Range(1, 1000);
+            //var sliceOfSampleList = theSampleList.Skip(100).Take(50);
+
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+            Parallel.ForEach(theSampleList.Slice(5), s =>
+                {
+                    Parallel.ForEach(s, item =>
+                        {
+                            Console.WriteLine(item);
+                        });
+                });
+
+            Console.WriteLine("Elapsed {0}", stopWatch.ElapsedMilliseconds);
+            
+            //var theSliced = theSampleList.Slice(6);
+
+            stopWatch.Restart();
+            foreach (var x in theSampleList.Slice(6))
+            {
+                foreach(var y in x)
+                {
+                    Console.WriteLine(y);
+                }
+                
+               
+            }
+
+            Console.WriteLine("Elapsed {0}", stopWatch.ElapsedMilliseconds);
+            
+
+           
 
 
         }
@@ -26,23 +60,48 @@ namespace FunctionalProgramming
             return input+d;
         }
 
-        public static IEnumerable<IEnumerable<T>> Slice<T>(IEnumerable<T> collection, int x)
+        public static IEnumerable<IEnumerable<T>> Slice<T>(this IEnumerable<T> collection, int x)
         {
-            IEnumerable<IEnumerable<T>> theList = new List<List<T>>();
+            List<List<T>> theList = new List<List<T>>();
+            
+           
             
             if (collection.Count() == 0) throw new ApplicationException("The collection is empty");
             if (collection.Count() <= x)
             {
-                theList.ToList().Insert(0, collection);
+               // theList.AddRange(collection.AsEnumerable());
                 return theList;
             }
 
-            theList.ToList().Insert(0, collection.Skip(skippy).Take(x));
 
-            //Func<int, IEnumerable<T>, IEnumerable<T>> getX = delegate(int num, IEnumerable<T> y){
-            //    return y.
-            //}
-         
+            int theCount = collection.Count();
+            
+            for(int i = 0;  i<theCount/x; i++)
+            {
+                theList.Add(collection.Skip(i * x).Take(x).ToList());
+                //theList.ToList().Insert(0, collection.Skip(i*x).Take(x).ToList());
+            }
+            
+            if(theCount.HasReminder(x))
+            {
+                var toInsert = collection.Skip(theCount- theCount.ReturnReminder(x)).Take(x).ToList();
+                theList.Add(toInsert);
+                //theList.AddRange(toInsert);
+            }
+
+
+            return theList;
+
+        }
+
+        public static bool HasReminder(this int theInt, int toDivideBy)
+        {
+            return theInt.ReturnReminder(toDivideBy) >0;
+        }
+
+        public static int ReturnReminder(this int theInt, int toDivideBy)
+        {
+            return theInt % toDivideBy;
         }
     }
 }
