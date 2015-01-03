@@ -57,6 +57,8 @@
     <Compile Include="CachingWithClosures.cs" />
     <Compile Include="ClosuresStuff.cs" />
     <Compile Include="CompositeStuff.cs" />
+    <Compile Include="Currying1.cs" />
+    <Compile Include="CurryingStuff.cs" />
     <Compile Include="ExtensionsMethods.cs" />
     <Compile Include="PartialFunctions.cs" />
     <Compile Include="Program.cs" />

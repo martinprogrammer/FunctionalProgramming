@@ -100,7 +100,11 @@ namespace FunctionalProgramming
             //CachingWithClosures.ExecuteCache();
             //RecursionsStuff.ExecuteFactorialRecursion();
 
-            PartialFunctions.ExecutePartialFunction();
+            //PartialFunctions.ExecutePartialFunction();
+
+            //CurryingStuff.ExecuteCurrying();
+
+            Currying1.ExecuteCurrying1();
 
 
             Console.Read();
